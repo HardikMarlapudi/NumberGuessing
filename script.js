@@ -8,7 +8,7 @@ function checkInput() {
    const checkNumber = document.getElementById("checkNumber");
    const guess = parseInt(inputElement.value);
 
-    if (isNaN(guess) || guess < 1 || guess > 100) {
+    if (isNaN(guess) || guess <= 0 || guess >= 100) {
         output.innerHTML = `Please enter your number from 1-100`;
         return;
     }
