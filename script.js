@@ -3,36 +3,45 @@ const targetNumber = Math.floor(Math.random() * 100) + 1;
 document.getElementById("chances").innerHTML = `Chances left ${chances}`;
 
 function checkInput() {
-    const inputElement = document.getElementById("inputNum");
-    const outputElement = document.getElementById("output");
-    const checkNumber = document.getElementById("checkNumber");
-    const guess = parseInt(inputElement.value);
+   const inputElement = document.getElementById("inputNum");
+   const output = document.getElementById("output");
+   const checkNumber = document.getElementById("checkNumber");
+   const guess = parseInt(inputElement.value);
 
-   if (isNaN(guess) || guess <= 0 || guess >= 100) {
-        outputElement.textContent = "Please enter a valid number from 1-100";
+    if (isNaN(guess) || guess < 1 || guess > 100) {
+        output.innerHTML = `Please enter your number from 1-100`;
         return;
-   }
+    }
 
-   chances--;
-   document.getElementById("chances").textContent = `Chances left: ${chances}`;
+    chances--;
+    document.getElementById("chances").innerHTML = `Chances left ${chances}`;
 
-if(chances === 0) {
-    window.alert("Game over!!!");
-    inputElement.disabled = true;
-    checkNumber.disabled = true;
-}
-
-    if (guess === targetNumber) {
-        outputElement.textContent = `You guessed the correct number!!!`;
+    if (chances === 0) {
+        document.getElementById("output").innerHTML = `You lost!!!`;
         inputElement.disabled = true;
         checkNumber.disabled = true;
-    } else if (chances === 0) {
+    }
+
+    if (guess === 0) {
+        document.getElementById("output").innerHTML = `Please enter a number from 1-100`;
+        return;
+    }
+
+    if (guess === targetNumber) {
+        document.getElementById("output").innerHTML = `Congrats, you guess the correct number.`;
         inputElement.disabled = true;
-    } else if (guess < targetNumber || guess < 50) {
-        outputElement.textContent = `Your guess is too low.`;
-    } else if (guess > targetNumber || guess > 50) {
-        outputElement.textContent = `Your guess is too high.`;
+        checkNumber.disabled = true;
+    } else if (guess < 50) {
+        document.getElementById("output").innerHTML = `Your guess is too low`;
+        return;
+    } else if (guess >= 50) {
+        document.getElementById("output").innerHTML = `Your guess is too high`;
+        return;
+    } else if (guess <= 0 || guess >= 100) {
+        document.getElementById("output").innerHTML = `Please enter a number form 1 to 100`;
+        return;
     } else {
-        outputElement.textContent = `Please enter a number from 1-100`;
+        document.getElementById("output").innerHTML = `Please enter a valid number`;
+        return;
     }
 }
