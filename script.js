@@ -1,12 +1,12 @@
 let chances = 100;
-const targetNumber = Math.floor(Math.random() * 100) + 1;
+const targetNumber = Math.floor(Math.random() * 100 + 1);
 document.getElementById("chances").innerHTML = `Chances left ${chances}`;
 
 function checkInput() {
    const inputElement = document.getElementById("inputNum");
-   const output = document.getElementById("output");
    const checkNumber = document.getElementById("checkNumber");
    const guess = parseInt(inputElement.value);
+   const output = document.getElementById("output");
 
     if (isNaN(guess) || guess <= 0 || guess >= 100) {
         output.innerHTML = `Please enter your number from 1-100`;
