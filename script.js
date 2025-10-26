@@ -17,9 +17,10 @@ function checkInput() {
     document.getElementById("chances").innerHTML = `Chances left ${chances}`;
 
     if (chances === 0) {
-        document.getElementById("output").innerHTML = `You lost!!!`;
+        document.getElementById("output").innerHTML = `You lost the game!!!`;
         inputElement.disabled = true;
         checkNumber.disabled = true;
+        return;
     }
 
     if (guess === 0) {
