@@ -9,7 +9,7 @@ function checkInput() {
    const output = document.getElementById("output");
 
     if (isNaN(guess) || guess <= 0 || guess >= 100) {
-        output.innerHTML = `Please enter your number from 1-100`;
+        output.innerHTML = `Please enter a number from 1-100`;
         return;
     }
 
