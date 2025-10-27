@@ -39,7 +39,7 @@ function checkInput() {
         document.getElementById("output").innerHTML = `Your guess is too high`;
         return;
     } else if (guess <= 0 || guess >= 100) {
-        document.getElementById("output").innerHTML = `Please enter a number from 1 to 100`;
+        document.getElementById("output").innerHTML = `Please enter a number from 1-100`;
         return;
     } else {
         document.getElementById("output").innerHTML = `Please enter a valid number`;
