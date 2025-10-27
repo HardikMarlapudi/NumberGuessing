@@ -29,7 +29,7 @@ function checkInput() {
     }
 
     if (guess === targetNumber) {
-        document.getElementById("output").innerHTML = `Congrats, you guess the correct number.`;
+        document.getElementById("output").innerHTML = `Congrats, you guessed the correct number.`;
         inputElement.disabled = true;
         checkNumber.disabled = true;
     } else if (guess < 50) {
